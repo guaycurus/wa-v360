@@ -18,51 +18,6 @@ let link: any;
 // Waiting for the API to be ready
 WA.onInit().then(() => {
 
-    WA.room.area.onEnter("zone_work1").subscribe(() => {
-        if(popupPrivateOffice1) return;
-        if(!WA.state.work1) {
-            popupPrivateOffice1 = WA.ui.openPopup("popup_work1", WA.state.txt_popup_work1 as string, [{
-            label: "Ouvrir le programme",
-            className: "primary",
-            callback: () => {
-                    link = WA.state.lnk_popup_work1; 
-                    WA.nav.openCoWebSite(link);
-                    popupPrivateOffice1?.close();
-                    popupPrivateOffice1 = null;
-                }
-            }]);
-        }
-    });
-    WA.room.area.onEnter("zone_work2").subscribe(() => {
-        if(popupPrivateOffice2) return;
-        if(!WA.state.work2) {
-            popupPrivateOffice2 = WA.ui.openPopup("popup_work2", WA.state.txt_popup_work2 as string, [{
-            label: "Ouvrir le programme",
-            className: "primary",
-            callback: () => {
-                    link = WA.state.lnk_popup_work2;
-                    WA.nav.openCoWebSite(link);
-                    popupPrivateOffice2?.close();
-                    popupPrivateOffice2 = null;
-                }
-            }]);
-        }
-    });
-    WA.room.area.onEnter("zone_work3").subscribe(() => {
-        if(popupPrivateOffice3) return;
-        if(!WA.state.work3) {
-            popupPrivateOffice3 = WA.ui.openPopup("popup_work3", WA.state.txt_popup_work3 as string, [{
-            label: "Ouvrir le programme",
-            className: "primary",
-            callback: () => {
-                    link = WA.state.lnk_popup_work3; 
-                    WA.nav.openCoWebSite(link);
-                    popupPrivateOffice3?.close();
-                    popupPrivateOffice3 = null;
-                }
-            }]);
-        }
-    });
     /*
     WA.room.area.onEnter("zone_work4").subscribe(() => {
         if(popupPrivateOffice4) return;
@@ -96,18 +51,6 @@ WA.onInit().then(() => {
     });
     */
 
-    WA.room.area.onLeave("zone_work1").subscribe(() => {
-        popupPrivateOffice1?.close();
-        popupPrivateOffice1 = null;
-    });
-    WA.room.area.onLeave("zone_work2").subscribe(() => {
-        popupPrivateOffice2?.close();
-        popupPrivateOffice2 = null;
-    });
-    WA.room.area.onLeave("zone_work3").subscribe(() => {
-        popupPrivateOffice3?.close();
-        popupPrivateOffice3 = null;
-    });
     /*
     WA.room.area.onLeave("zone_work4").subscribe(() => {
         popupPrivateOffice4?.close();
@@ -116,55 +59,6 @@ WA.onInit().then(() => {
     WA.room.area.onLeave("zone_work5").subscribe(() => {
         popupPrivateOffice5?.close();
         popupPrivateOffice5 = null;
-    });
-    */
-
-    WA.room.area.onEnter("zone_intro_stand1").subscribe(() => {
-        if(popupStand) return;
-        popupStand = WA.ui.openPopup("popup_stand1", WA.state.txt_popup_stand1 as string, [{
-        label: "Fermer",
-        className: "primary",
-        callback: () => {
-                popupStand?.close();
-                popupStand = null;
-            }
-        }]);
-    });
-    WA.room.area.onLeave("zone_intro_stand1").subscribe(() => {
-        popupStand?.close();
-        popupStand = null;
-    });
-
-    WA.room.area.onEnter("zone_intro_stand2").subscribe(() => {
-        if(popupStand) return;
-        popupStand = WA.ui.openPopup("popup_stand2", WA.state.txt_popup_stand2 as string, [{
-        label: "Fermer",
-        className: "primary",
-        callback: () => {
-                popupStand?.close();
-                popupStand = null;
-            }
-        }]);
-    });
-    WA.room.area.onLeave("zone_intro_stand2").subscribe(() => {
-        popupStand?.close();
-        popupStand = null;
-    });
-
-    WA.room.area.onEnter("zone_intro_stand3").subscribe(() => {
-        if(popupStand) return;
-        popupStand = WA.ui.openPopup("popup_stand3", WA.state.txt_popup_stand3 as string, [{
-        label: "Fermer",
-        className: "primary",
-        callback: () => {
-                popupStand?.close();
-                popupStand = null;
-            }
-        }]);
-    });
-    WA.room.area.onLeave("zone_intro_stand3").subscribe(() => {
-        popupStand?.close();
-        popupStand = null;
     });
 
     WA.room.area.onEnter("zone_intro_stand4").subscribe(() => {
@@ -182,41 +76,9 @@ WA.onInit().then(() => {
         popupStand?.close();
         popupStand = null;
     });
-
-    WA.room.area.onEnter("zone_intro_stand5").subscribe(() => {
-        if(popupStand) return;
-        popupStand = WA.ui.openPopup("popup_stand5", WA.state.txt_popup_stand5 as string, [{
-        label: "Fermer",
-        className: "primary",
-        callback: () => {
-                popupStand?.close();
-                popupStand = null;
-            }
-        }]);
-    });
-    WA.room.area.onLeave("zone_intro_stand5").subscribe(() => {
-        popupStand?.close();
-        popupStand = null;
-    });
+*/
 
 
-    WA.room.area.onEnter("zone_intro_stand6").subscribe(() => {
-        if(popupStand) return;
-        popupStand = WA.ui.openPopup("popup_stand6", WA.state.txt_popup_stand6 as string, [{
-        label: "Fermer",
-        className: "primary",
-        callback: () => {
-                popupStand?.close();
-                popupStand = null;
-            }
-        }]);
-    });
-    WA.room.area.onLeave("zone_intro_stand6").subscribe(() => {
-        popupStand?.close();
-        popupStand = null;
-    });
-
-    
     // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
     bootstrapExtra().then(() => {
         console.log('Scripting API Extra ready');
@@ -225,7 +87,7 @@ WA.onInit().then(() => {
     // Detect if the browser if Firefox. If yet, open a popup to recommend using Chrome.
     if (navigator.userAgent.indexOf("Firefox") != -1) {
         WA.ui.openPopup("popup_firefox", "Pour une meilleure expérience, nous vous recommandons d'utiliser Chrome. Merci !", [{
-            label: "Fermer",
+            label: "Fechar",
             className: "primary",
             callback: (popup) => {
                 popup.close();
