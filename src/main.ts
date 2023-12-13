@@ -1,19 +1,10 @@
 /// <reference types="@workadventure/iframe-api-typings" />
-import { Popup } from "@workadventure/iframe-api-typings";
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
 import "./help/button";
 import "./speaker/access";
 
 console.log('Script started successfully');
-
-let popupPrivateOffice1: Popup|null;
-let popupPrivateOffice2: Popup|null;
-let popupPrivateOffice3: Popup|null;
-//let popupPrivateOffice4: Popup|null;
-//let popupPrivateOffice5: Popup|null;
-let popupStand: Popup|null;
-let link: any;
 
 // Waiting for the API to be ready
 WA.onInit().then(() => {
@@ -26,7 +17,7 @@ WA.onInit().then(() => {
             label: "Ouvrir le programme",
             className: "primary",
             callback: () => {
-                    link = WA.state.lnk_popup_work4; 
+                    link = WA.state.lnk_popup_work4;
                     WA.nav.openCoWebSite(link);
                     popupPrivateOffice4?.close();
                     popupPrivateOffice4 = null;
@@ -41,7 +32,7 @@ WA.onInit().then(() => {
             label: "Ouvrir le programme",
             className: "primary",
             callback: () => {
-                    link = WA.state.lnk_popup_work5; 
+                    link = WA.state.lnk_popup_work5;
                     WA.nav.openCoWebSite(link);
                     popupPrivateOffice5?.close();
                     popupPrivateOffice5 = null;
